@@ -1,1 +1,114 @@
-hello world!
+<!-- index.html -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+</head>
+<body>
+  <div id="app"></div>
+    hello world! -->
+  <!--<script>
+    window.$docsify = {
+      //...
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>-->
+<!-- </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lendio Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Lendio documentation">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="theme">
+  <script type="text/javascript">
+    function activateDarkMode() {
+      document.querySelector('link[title=theme]').href="//unpkg.com/docsify/lib/themes/dark.css";
+    }
+
+    function activateLightMode() {
+      document.querySelector('link[title=theme]').href="//unpkg.com/docsify/lib/themes/vue.css"
+    }
+    /**
+     * Sets a color scheme for the website.
+     * If browser supports "prefers-color-scheme" it will respect the setting for light or dark mode
+     * otherwise it will set a dark theme during night time
+     */
+    function setColorScheme() {
+      const darkMode = localStorage.getItem("darkMode")
+      const isDarkMode = darkMode == "true" ? darkMode : false
+      const isLightMode = !isDarkMode
+      const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+      const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified;
+
+      window.matchMedia("(prefers-color-scheme: dark)").addListener(e => e.matches && activateDarkMode())
+      window.matchMedia("(prefers-color-scheme: light)").addListener(e => e.matches && activateLightMode())
+
+      if(isDarkMode) activateDarkMode()
+      if(isLightMode) activateLightMode()
+      if(isNotSpecified || hasNoSupport) {
+        console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+        now = new Date();
+        hour = now.getHours();
+        if (hour < 4 || hour >= 16) {
+          activateDarkMode();
+        }
+      }
+    }
+    setColorScheme();
+  </script>
+  <style type="text/css">
+    .sidebar li {
+      margin: 0;
+      line-height: 1.7em;
+    }
+    .sidebar ul li ul {
+      padding-bottom: 10px;
+    }
+    .sidebar-nav>ul>li>p {
+      font-size: 17px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Loading...</div>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
+    var repo = 'https://github.com/brendon-davies/brendon-davies.github.io'
+
+    window.$docsify = {
+      name: 'Brendons Docs',
+      repo: repo,
+      auto2top: true,
+      executeScript: true,
+      loadSidebar: true,
+      // loadNavbar: true,
+      // mergeNavbar: true,
+      maxLevel: 4,
+      subMaxLevel: 1,
+      search: {
+        paths: 'auto',
+      },
+      plugins: [
+        EditOnGithubPlugin.create(repo + '/tree/master/docs/'),
+      ],
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+</body>
+</html>
