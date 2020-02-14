@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brendon's Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Brendons documentation">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="theme">
+  <script type="text/javascript">document.querySelector('link[title=theme]').href="//unpkg.com/docsify/lib/themes/dark.css";</script>
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style type="text/css">
+    .sidebar li {
+      margin: 0;
+      line-height: 1.7em;
+    }
+    .sidebar ul li ul {
+      padding-bottom: 10px;
+    }
+    .sidebar-nav>ul>li>p {
+      font-size: 17px;
+      text-transform: uppercase;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="app">Loading...</div>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
+    var repo = 'https://github.com/brendon-davies/brendon-davies.github.io'
+
+    window.$docsify = {
+      name: 'Brendon s Docs',
+      repo: repo,
+      auto2top: true,
+      executeScript: true,
+      loadSidebar: true,
+      // loadNavbar: true,
+      // mergeNavbar: true,
+      maxLevel: 4,
+      subMaxLevel: 1,
+      search: {
+        paths: 'auto',
+      },
+    //   plugins: [
+    //     EditOnGithubPlugin.create(repo + '/tree/master/docs/'),
+    //   ],
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+
+    <script>// Bind to events
+                  
+          const compareDate = (exp) => {
+              const d = Date.now()
+              if (d > exp){
+              console.log("Your identity session has expired")
+              netlifyIdentity.logout();
+              netlifyIdentity.open();
+              } else {
+              console.log("the token hasn't expired, yet")
+              
+              }
+          }
+          if (window.netlifyIdentity) {
+  // Check if the JWT token is expired, if so log out the user          
+              netlifyIdentity.on("login", user => {
+              console.log(user)
+              compareDate(user.token.expires_at)
+              });
+  // Redirect to the main page after a successful login
+              window.netlifyIdentity.on("init", user => {
+              if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                      updateLoginText()
+                  });
+              }
+          });   
+          }
+    </script>
+
+
+</body>
+</html>
