@@ -1,5 +1,13 @@
 # Brendon Davies Personal Documentation
 
+How these docs work technically:
+
+
+How to encrypt these docs:
+
+
+
+
 Here's a list of my repos on Github:
 
 angularStuff: https://github.com/brendon-davies/angularStuff
