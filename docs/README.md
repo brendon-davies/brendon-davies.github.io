@@ -1,11 +1,17 @@
 # Brendon Davies Personal Documentation
 
 How these docs work technically:
+The repo is https://github.com/brendon-davies/brendon-davies.github.io that contains the code for the docs.
+The docs live in the docs directory within the repo.
+The main page is the index.html file within there. 
+The index.html is encrypted using staticrypt which makes it password protected.
+The docs are served up on netflify at this url: https://seivadnodnerb.netlify.app
+To push changes all you need to do is merge into the master branch in the repo on github and the changes should reflect.
 
 
 How to encrypt these docs:
-
-
+You shouldn't need to re-encrypt this unless you make any changes to the index.html because that is the only file that is encrypted
+and all of the other pages are not accessible unless you go through the 
 
 
 Here's a list of my repos on Github:
