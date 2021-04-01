@@ -15,7 +15,7 @@ The docs are served up on netflify at this url: https://seivadnodnerb.netlify.ap
 To push changes all you need to do is merge into the master branch in the repo on github and the changes should reflect.
 
 
-# How to encrypt these docs:
+How to encrypt these docs:
 
 You shouldn't need to re-encrypt this unless you make any changes to the index.html because that is the only file that is encrypted
 
@@ -23,9 +23,9 @@ and all of the other pages are not accessible unless you go through the index.ht
 
 To encrypt the index.html go here: https://robinmoisson.github.io/staticrypt/
 
-then just take the entire contents of the index.html, paste them inside the box labeled `HTML/string to encrypt`
-
 put the password you want to use to encrypt the page with in the box labeled `Passphrase`
+
+then just take the entire contents of the index.html, paste them inside the box labeled `HTML/string to encrypt`
 
 then click on the button on the bottom right hand side labeled `Generate passphrase protected HTML`
 
@@ -39,8 +39,21 @@ When you merge into master, the encrypted index.html will then force you to ente
 
 browse to any of the pages within these docs.
 
+The `indexUnEncrypted.html` and `indexUnEncryptedBackup.html` contain the un-encrypted index.html code
 
-# Here's a list of my repos on Github:
+The `indexEncrypted.html` contains the encrypted index.html
+
+if you don't make any changes to the index.html you can just swap these around, using the un-encrypted for dev work
+
+and then switch it to the encrypted version to deploy
+
+On your Lendio mac the alias `pdsdev` sets this up to use the un-encrypted index.html
+
+the alias `pdsdep` swaps in the encrypted index.html so you can deploy
+
+
+
+Here's a list of my repos on Github:
 
 angularStuff: https://github.com/brendon-davies/angularStuff
 

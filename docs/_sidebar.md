@@ -1,8 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 - [Home](/)
-<!-- - [Guide](guide.md) -->
-- Personal
+
+ Personal
     - [General Personal Notes](personal/personalMain.md)
 
 - Work
