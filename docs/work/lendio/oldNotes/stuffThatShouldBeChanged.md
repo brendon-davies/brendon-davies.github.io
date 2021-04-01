@@ -1,0 +1,1 @@
+cadence borrower filter values should not be hard coded in cadenceborrowerfilters.php
