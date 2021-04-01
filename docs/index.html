@@ -1,192 +1,57 @@
-<!doctype html>
-<html class="staticrypt-html">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Protected Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- do not cache this page -->
-    <meta http-equiv="cache-control" content="max-age=0"/>
-    <meta http-equiv="cache-control" content="no-cache"/>
-    <meta http-equiv="expires" content="0"/>
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
-    <meta http-equiv="pragma" content="no-cache"/>
-
-    <style>
-        .staticrypt-hr {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border: 0;
-            border-top: 1px solid #eee;
-        }
-
-        .staticrypt-page {
-            width: 360px;
-            padding: 8% 0 0;
-            margin: auto;
-            box-sizing: border-box;
-        }
-
-        .staticrypt-form {
-            position: relative;
-            z-index: 1;
-            background: #FFFFFF;
-            max-width: 360px;
-            margin: 0 auto 100px;
-            padding: 45px;
-            text-align: center;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-        }
-
-        .staticrypt-form input {
-            outline: 0;
-            background: #f2f2f2;
-            width: 100%;
-            border: 0;
-            margin: 0 0 15px;
-            padding: 15px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-
-        .staticrypt-form .staticrypt-decrypt-button {
-            text-transform: uppercase;
-            outline: 0;
-            background: #4CAF50;
-            width: 100%;
-            border: 0;
-            padding: 15px;
-            color: #FFFFFF;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .staticrypt-form .staticrypt-decrypt-button:hover, .staticrypt-form .staticrypt-decrypt-button:active, .staticrypt-form .staticrypt-decrypt-button:focus {
-            background: #43A047;
-        }
-
-        .staticrypt-html {
-            height: 100%;
-        }
-
-        .staticrypt-body {
-            margin-bottom: 1em;
-            background: #76b852; /* fallback for old browsers */
-            background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-            background: -moz-linear-gradient(right, #76b852, #8DC26F);
-            background: -o-linear-gradient(right, #76b852, #8DC26F);
-            background: linear-gradient(to left, #76b852, #8DC26F);
-            font-family: "Arial", sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .staticrypt-instructions {
-            margin-top: -1em;
-            margin-bottom: 1em;
-        }
-
-        .staticrypt-title {
-            font-size: 1.5em;
-        }
-
-        .staticrypt-footer {
-            position: fixed;
-            height: 20px;
-            font-size: 16px;
-            padding: 2px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin-bottom: 0;
-        }
-
-        .staticrypt-footer p {
-            margin: 2px;
-            text-align: center;
-            float: right;
-        }
-
-        .staticrypt-footer a {
-            text-decoration: none;
-        }
-    </style>
-</head>
-
-<body class="staticrypt-body">
-<div class="staticrypt-page">
-    <div class="staticrypt-form">
-        <div class="staticrypt-instructions">
-            <p class="staticrypt-title">Protected Page</p>
-            <p></p>
-        </div>
-
-        <hr class="staticrypt-hr">
-
-        <form id="staticrypt-form" action="#" method="post">
-            <input id="staticrypt-password"
-                   type="password"
-                   name="password"
-                   placeholder="passphrase"
-                   autofocus/>
-
-            <input type="submit" class="staticrypt-decrypt-button" value="DECRYPT"/>
-        </form>
-    </div>
-
-</div>
-<footer class="staticrypt-footer">
-    <p class="pull-right">Created with <a href="https://robinmoisson.github.io/staticrypt">StatiCrypt</a></p>
-</footer>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js" integrity="sha384-lp4k1VRKPU9eBnPePjnJ9M2RF3i7PC30gXs70+elCVfgwLwx1tv5+ctxdtwxqZa7" crossorigin="anonymous"></script>
-
-<script>
-
-    /**
-     * Decrypt a salted msg using a password.
-     * Inspired by https://github.com/adonespitogo
-     */
-    var keySize = 256;
-    var iterations = 1000;
-    function decrypt (encryptedMsg, pass) {
-        var salt = CryptoJS.enc.Hex.parse(encryptedMsg.substr(0, 32));
-        var iv = CryptoJS.enc.Hex.parse(encryptedMsg.substr(32, 32))
-        var encrypted = encryptedMsg.substring(64);
-
-        var key = CryptoJS.PBKDF2(pass, salt, {
-            keySize: keySize/32,
-            iterations: iterations
-        });
-
-        var decrypted = CryptoJS.AES.decrypt(encrypted, key, {
-            iv: iv,
-            padding: CryptoJS.pad.Pkcs7,
-            mode: CryptoJS.mode.CBC
-        }).toString(CryptoJS.enc.Utf8);
-        return decrypted;
+  <meta charset="UTF-8">
+  <title>Brendon's Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Brendon's Documentation Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" title="theme">
+  <script type="text/javascript">
+    document.querySelector('link[title=theme]').href="//unpkg.com/docsify/lib/themes/dark.css";
+  </script>
+  <style type="text/css">
+    .sidebar li {
+      margin: 0;
+      line-height: 1.7em;
     }
-
-    document.getElementById('staticrypt-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        var passphrase = document.getElementById('staticrypt-password').value,
-            encryptedMsg = '70a041b47192aaf4bd5d661d875003f263f7637153eb14997a8fd117714ebb8d442c1f5e9bd506cac351019c95ad29863c6631989acb7531ab7a60b998248370vlRliS6lP6KMO0hxiV9CJ3Arm+AXkAUoc9BWkOb86bX1oxWSbm1txtvi2G5ZaPApiypf2Ns8Ia6jyDKACK2vsRmsoVkqzFHa/4nWcfulxj84QUaS7qtFHBEMXTBSpS/cQHqhuxtVH84kJDeMGixEKrHcPwU5NsIyN9Ixd3Hd/jPulFnSvtZ81dpq+eNHk1gS64BQKtoujG5WEQVdMTao39hpaThrIBtJTazmAbFyIcJLcG8R4uhebbI6cGEAJW4452h5am+3+tfrgiLZvTTwqOYM+H7dx5z6QyRDt+DIXwjZHHkfWf+apo7txW+lE3LHzON/eMYzkZ6N+sVwePrv7kTEhPbK4SBOoFWDXyzgDuw2xJ4x1IMy5UudESSS5ubIpEWiR5e2SaJ1GiWZcijMji8v0/wY0G33wMwgVvQDYz8f2UsM6sKTe8tsKSAIWYcDWSQ2jtMCB3bQLiTyzn42uvU0v/QEk2pj97q/4rRwwE35JQ1IUG1rTS8QQg1pLaUpPGZwL2obO8Y03j+6QVSo0hicPZivCwKfN89IeEpHtDW4mQGMxy/TPb9jePinrpJgi3BE3Tk3VtwZbcEtrcktuq1mQ53dp2Ti84lGy8BWzlZ0h1EZ0GgjLjFUubhMAmOBSB8ACkbAQTj1X6rvlY/c0nnSet/55301SsnvMTET5R+ofO5KlGkyeV+mxlyK7Z8syrYlFknwmXRqxohxsullJatA9dOnjKWyPztM7p5nzIAOEu9MKwqqsd71032Sepyxwc2ErTJkFCb8ArBSCnmNUkFv/usaE7O894R/Ye3/KrnBynIWH22sC+AOqBq4cqqGbXheSxJPZyhkl8WswB+vPBfhua5HKqfO3+ttp9WPGy/yzIbKf5tpVh+3+kWxS4LX6fK8Tc9gQ/9GMX54wL/F8Ma0usVEbyz63B1mOYI5dWr6wJiLApFR9gqwEh8/yMEkpGUY4xjo17m9qGT+dhTY4dYTmuJcseASeFFFdvKMrzqjj9Zz0vwpLbxedDjXvPtaShH90SYC+jd7sK312FGYoKtc5AVMv1e4hocAUr6s7eGteD1n253q7ei+2Bw9+eN/4k/vTy+x3RsMa/7LtV7WpEKb7Xra4qjXn8uSTboZiyI+iJwXMm03zh1Ou3eaN58RITWWi+o76YoM37z8Hy6Afm8t8Wk6Fr0n69sh1FjvYGs4Oy/mVvUKNsaPgSJw2ehaYdHVGE74XfSJlyVu/kDoyAoHfyj9fsZ73FkHIAlN0WMuRCLLfHV9v0Pnow+Ra0vrJCJvoSicj76EJ4mRgShTX/IHgzBbpIiCteJXJhOyGYl8Kg4L23NHlo9zk5BThq61paXwUQQlPAjxNN6gGtu3qeAfk14/0YP1NWpq5C76/vbBSUWossfX6a6qzcFe1ony1zIywATc2lELjo5xgjNByZ/Y6xllHIysvpPTwLbpywubI28F/51RaK/IzFZ5crpk7ZbZNdYXc+A7g7u3Iznkv++XanrH1mNbUsoerhQ+SItY+mh0yniBLvmHhKhqN7Q0Jlgb9F/3sIAa+FnaOSmogNvzYwXvU/f+FUZtZ/HR3BSOSF7+Nsk/x97Ch9oCtfUasNJoiUfnTeJQcLwI8mRFstwNYALOEamf4MYAc9un0gWWxlJAtFZYWNZm1Qi8Jde0bvh+7O2FW858yCsriwcEq5VJagIWWWYl+SCbDci4ay0dn6aE58yPEMg7isNxNK6TeDRWSgrX5pf+4eeThxUVN6UkEfN9+PDxPezp4nOq5MybjUfBJ7u/+jZhOFYKRsRC/n3OT+AvR8Z2zk0Dy5D7KqVkoo3UiXmAkfkD6psaXiMeTujoR8Y2jOCLoErXoncAQVtlqS0jl3cA11KHDLhRU4uk36utMsZE9K2ZTZ51esUre+XsTD/6z5ilJ9vkCfk5iZsK+llh6LPZks1ZXayBfQMc3rUf0d3bA5pXaM8ur4NseJXODYkB3+oRtLFepFwOZ6SUnrnBwwztaYaTt0ftemy3HYVbpZ+/um9/NOihyOmyspZFBuCRJKXdLyLRUPb5F3YyT3EXgCkLVd+vhoZlRPk/zNzwFP9MZJiD7Hf1Oz0j9fT0IWJjE+tw1yK364DJagzUilwX3wClvEwFiZx2zjuupPDyanICBhI6WmrGMMVAgEK2H2lTxTem+Qn0XuevH53a5DTl/aKuhRYfBqgwN2YxvVrMvnY0gRRCUd7USJN/xKgv2yl4PilMzxl1bK16NikUfEOZwVZ4IzS3OXwEH/GZgb6tPoZ2f4rNEaHuWVzbAkd5KVmMT9njTKylCpyT9z0Zn7R/n2km4VZCrBXLST8l3SbdC66IuZfgub5+uLDtt+oAaGdYFVQnlMzTW+K61ah+eLmn3RLcoPF79O3Y6paoLt3dSRylWsUoh7M8k+DGO34sNF22u/QFRS9EZW1n8TPHfwDefNd7oOhOFJc1Vuiq5UfrOY667gj+3eGRGQaB38lSpxo+eGQ3MD/lbSKuvNllhz7Op1b2vEINwaDexpa5PnjxbKUGaCuUSMtIp1AZUaVuLKN8l3k5nCvz9+Woy8F7Az+cmLvpmVLhs8PhRfYTJPq5XiJhzNxo0VPjeok=',
-            encryptedHMAC = encryptedMsg.substring(0, 64),
-            encryptedHTML = encryptedMsg.substring(64),
-            decryptedHMAC = CryptoJS.HmacSHA256(encryptedHTML, CryptoJS.SHA256(passphrase).toString()).toString();
-
-        if (decryptedHMAC !== encryptedHMAC) {
-            alert('Bad passphrase!');
-            return;
-        }
-
-        var plainHTML = decrypt(encryptedHTML, passphrase);
-
-        document.write(plainHTML);
-        document.close();
-    });
-</script>
+    .sidebar ul li ul {
+      padding-bottom: 10px;
+    }
+    .sidebar-nav>ul>li>p {
+      font-size: 17px;
+      text-transform: uppercase;
+    }
+    .content {
+      overflow: auto;
+      background: rgba(0, 128, 0, 0.3);
+    }    
+  </style>
+</head>
+<body>
+  <div id="app">Loading....</div>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
+    window.$docsify = {
+      name: 'Brendons Docs',
+      repo: '',
+      auto2top: true,
+      executeScript: true,
+      loadSidebar: true,
+      maxLevel: 4,
+      subMaxLevel: 1,
+      search: {
+        paths: 'auto',
+      },
+    }
+  </script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> creates duplicate search box-->
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
 </body>
 </html>
