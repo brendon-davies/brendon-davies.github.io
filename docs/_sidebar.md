@@ -3,9 +3,11 @@
 - [Home](/)
 
  Personal
+    - [Scratchpaper (unorganized notes)](personal/personalNotesScratchpaper.md)
     - [General Personal Notes](personal/personalMain.md)
 
 - Work
+    - [Scratchpaper (unorganized notes)](work/workNotesScratchpaper.md)
     - [General Work Notes](work/workMain.md)
     - Lendio
         - [General Lendio Work Notes](work/lendio/lendioMain.md)

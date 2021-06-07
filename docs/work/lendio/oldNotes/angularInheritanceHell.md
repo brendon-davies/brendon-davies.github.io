@@ -12,7 +12,7 @@ searched for subscribertoborrowerdocuments, found it in the borrower-detail-tabs
 
 
 
-
+![Some Image](../images/cURLError.png)
 
 
 dWmwNu3G%zEdJ9vWfSl&5TWFbEyQzz6tz7p8C44$A^b5fjsSGalQeSjd5luWMBFh$ZElk1Kv
